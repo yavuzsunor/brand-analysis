@@ -65,25 +65,88 @@ The details of these will be discussed in the results section.
 
 ### The Results 
 
-#### Negative viral online media topics on the airline
+### Negative viral online media topics on the airline
+Focusing on the United Airlines, the main viral negative social media posts have been about an incident where a famous baseball player's pregnant wife had to clean up popcorn in the cabin. The topic came out several times both in the news data and social data with different topic clusters. When we look into some of the posts labeled by this topic we see similar posts about the incident:
+- > 'blue jays anthony bass slams united airlines for making pregnant wife clean kids messes on hands and knees'
 
+- > 'a united airlines flight attendant allegedly forced the 22 week pregnant wife of toronto blue jays pitcher anthony bass to clean the planes cabin on her hands and knees' 
 
-#### Common topics mentioned on the airline
+### Common topics mentioned on the airline
+Other common topics mentioned the airline have been more generic news and posts about new flight destinations, quarterly earnings etc.:
+- > 'united airlines will fly to 114 different international cities this summer and has expanded its flying by 25 versus last year' 
+- > 'united airlines stock chart fibonacci analysis 042923 trading idea entry point 44 61 80'
 
+### General topics & trends mentioned in the industry and within its competitor
 
-#### General topics & trends mentioned in the industry and within its competitor
+Some interesting topics and trends mentioned in the industry include a proposal for free seats for plus size travelers, Southwest nationwide grounding issues and mixed customer service experiences with Delta among others.
 
+```
+Topic	Count	Name
+-1	    6852	-1_ng_plane_airline_nh
+ 0	    401	    0_delta_feet_spotted_flight
+ 1	    382	    1_spirit_airlines_ghosts_fly
+ 2	    340	    2_told_didnt_relationship_friends
+ 3	    313	    3_spirit_feet_spotted_flight
+ 4	    283	    4_level_body_astral_world
+ 5	    264	    5_united_airlines_rt_express
+ 6	    256	    6_airline_airways_cambrian_ser
+ 7	    229	    7_delta_deltas_customer_service
+ 8	    200	    8_southwest_airlines_texas_hsr
+ 9	    184	    9_seats_seat_plus_size
 
-#### Latent opportunites or risks that may be addressed proactively 
+Free Seats(Topic_9) Keywords:
+[('seats', 0.07435451872439745),
+ ('seat', 0.04311568214160679),
+ ('plus', 0.030041212453550948),
+ ('size', 0.028543438746437597),
+ ('demands', 0.02683698959894252),
+ ('fat', 0.024430223163090247),
+ ('petition', 0.021261785945257405),
+ ('bathrooms', 0.019750317095925285),
+ ('sized', 0.018882864139952184),
+ ('free', 0.018602459436824727)]
+ 
+ Delta(Topic_7) Keywords:
+ [('delta', 0.0936722479712925),
+ ('deltas', 0.023920515464044147),
+ ('customer', 0.01671281097848389),
+ ('service', 0.012589097178904348),
+ ('book', 0.012288369143513337),
+ ('booking', 0.012153269979377232),
+ ('lines', 0.011798737696350863),
+ ('airlines', 0.01032338025151275),
+ ('offers', 0.009779246237443782),
+ ('reservation', 0.009517391824111586)]
+ ```
+- >  'a fat tiktoker is demanding that the faa protect plus size travelers by providing obese people with free airplane seats hit the obese tiktoker wants free airline seats for fatties s1 e66'
+- > 'daily reminder if you fly on delta airlines youre doing so at great risk my recommendation if youre planning a trip use another airline youll thank me later if you cant book with another airline just walk youll arrive at your destination sooner much safer'
 
+- > 'Southwest passengers face delays after nationwide grounding - WDET 101.9 FM'
 
 
 ## About the github repo
-This repo has been built with OOO fashion with the below structured.
-... tree of the repo...
-The way it's designed allow to pip install it repo as a wholesome package.
-
-Once the repo has been cloned and a virutal environment created, the main python file can be run for any desired airlines following the format here: 
+The repo needs a few more touches to be finished with the inference pipeline. 
+It has been built with OOP fashion with the below main structure.
+```
+├── notebooks
+│   └── 1_Analysis.ipynb
+├── requirements.txt
+├── setup.py
+└── src
+    ├── __init__.py
+    ├── components
+    │   ├── __init__.py
+    │   ├── data_ingestion.py
+    │   ├── data_transformation.py
+    │   └── model_trainer.py
+    ├── exception.py
+    ├── logger.py
+    ├── pipeline
+    │   ├── __init__.py
+    │   └── inference.py
+    └── utilities.py
+ ```   
+Once it's done, it will allow to run a real-time inference pipeline through pip install.
 
 
 
@@ -91,7 +154,7 @@ Once the repo has been cloned and a virutal environment created, the main python
 
 An automatic query structured will be implemented for a specific keyword or phrase to extract the common topics mentioned within a certain time period with the following structure:
 
-- Online media sources will be searched with the specifi keyword and time period
+- Online media sources will be searched with the specific keyword and time period
 - Most frequent topics will be brought 
 - Sentiment Analysis will be made 
 

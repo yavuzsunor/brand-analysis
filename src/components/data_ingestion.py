@@ -52,6 +52,3 @@ class DataIngestion:
 if __name__ == "__main__":
     obj = DataIngestion()
     obj.download_files()
-
-    # data_transformation = DataTransformation()
-    # data_transformation.apply_data_transformation(train_data, val_data)
