@@ -1,0 +1,10 @@
+boto3
+pyarrow
+python-snappy
+pandas 
+numpy
+seaborn
+bertopic
+scikit-learn
+wordcloud
+-e .
