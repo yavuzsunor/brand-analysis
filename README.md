@@ -7,7 +7,7 @@ Three data sources(blog, news and social data) have been read to dataframes from
 ### Proposed Solution
 In order to focus on a specific airline for the sake of this study, a wordcloud analysis is made on a sample of the social media data to see which airlines mentioned most frequently.
 
-![Alt text](https://github.com/yavuzsunor/brand-analysis/images/wordcloud.png) 
+![alt text](/images/wordcloud.png) 
 
 As can be seen, the main airline that comes out happened to be "United Airlines" among some other less mentioned ones like Southwest, Spirit and American airlines. So, for the topic modeling part, "United Airlines" has been the main focus.
 
@@ -44,20 +44,20 @@ news_topics, news_probs = united_model.fit_transform(text_list)
 #### Blog Data
 The relevant blog data includes around 100 blog post about mostly generic topics and did not seem promising to understand much about what's menitoned on "United Airlines" or its competitors.
 
-![Alt text](https://github.com/yavuzsunor/brand-analysis/images/blog_summary.png)
+![alt text](/images/blog_summary.png)
 
 
 #### News Data
 The relevant news data includes around 3000 news mentioning "United Airlines", and the most prominent topics can be seen below with the corresponding keywords.
 
-![Alt text](https://github.com/yavuzsunor/brand-analysis/images/news_summary.png)
+![Alt text](/images/news_summary.png)
 
 When looking into the word frequencies in some of them, and reading a few samples labeled with those topics, one can see that some news mention possibly flight destinations while some others a bad experience happen to a celebrity during a flight which can be considered as a negative campaign. The details will be discussed in the results section.      
 
 #### Social Data
 The relevant social data includes around 10000 social media entries(by twitter and reddit) mentioning "United Airlines", and the most prominent topics can be seen below with the corresponding keywords.
 
-![Alt text](https://github.com/yavuzsunor/brand-analysis/images/social_summary.png)
+![alt text](/images/social_summary.png)
 
 Looking into the main topics extracted from the social media data, a similar set of topics to the news data data stand out. With a quick look, we understand that possibly an incident happen to a celebrity, and most other posts are about more generic industry related news.
 The details of these will be discussed in the results section.      
