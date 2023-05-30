@@ -7,15 +7,15 @@ import pyarrow
 import pandas as pd
 # from sklearn.model_selection import train_test_split
 
-from src.exception import CustomException
-from src.logger import logging
+from src_brand.exception import CustomException
+from src_brand.logger import logging
 # from src.components.data_transformation import DataTransformation
 
 @dataclass
 class DataIngestionConfig:
-    blog_data_path: str=os.path.join('artifacts/data/blog/') 
-    news_data_path: str=os.path.join('artifacts/data/news/')
-    social_data_path: str=os.path.join('artifacts/data/social/')
+    blog_data_path: str=os.path.join('brand_artifacts/data/blog/') 
+    news_data_path: str=os.path.join('brand_artifacts/data/news/')
+    social_data_path: str=os.path.join('brand_artifacts/data/social/')
 
 class DataIngestion:
     def __init__(self):

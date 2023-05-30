@@ -9,9 +9,9 @@ import pyarrow
 from bertopic import BERTopic
 from sklearn.feature_extraction.text import CountVectorizer
 
-from src.exception import CustomException
-from src.logger import logging
-from src.components.data_transformation import DataTransformation
+from src_brand.exception import CustomException
+from src_brand.logger import logging
+from src_brand.components.data_transformation import DataTransformation
 
 
 @dataclass

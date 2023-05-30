@@ -5,23 +5,24 @@ import os
 import glob
 import pandas as pd
 import pyarrow
-import importlib  
+import importlib 
 
-from src.exception import CustomException
-from src.logger import logging
-from src.utilities import clean_tweet
+from src_brand.exception import CustomException
+from src_brand.logger import logging
+from src_brand.utils import clean_tweet
+
 
 @dataclass
 class DataTransformation:
 
-    path = '../artifacts/data/'
-    
+    path = 'brand_artifacts/data/'
+
     def read_data(self, media_type):
         try:            
             parquet_files = glob.glob(os.path.join(self.path+media_type+'/', "*.parquet"))
-            
+
             # loop over the list of csv files 
-            for i, f in enumerate(self.parquet_files):
+            for i, f in enumerate(parquet_files):
                 # read the parquet file
                 df_temp = pd.read_parquet(f)
                 # print the location and filename
@@ -72,4 +73,4 @@ if __name__ == "__main__":
     data_transformation = DataTransformation()
     df = data_transformation.read_data("social")
     df = data_transformation.clean_transform(df, "social")
-    data_transformation.select_airline(df, "united airlines")
+    print(data_transformation.select_airline(df, "united airlines"))
