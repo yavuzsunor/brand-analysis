@@ -67,10 +67,3 @@ class DataTransformation:
         
         except Exception as e:
             raise CustomException(sys, e)
-
-# if __name__ == "__main__":
-
-#     data_transformation = DataTransformation()
-#     df = data_transformation.read_data("social")
-#     df = data_transformation.clean_transform(df, "social")
-#     print(data_transformation.select_airline(df, "united airlines"))
