@@ -24,18 +24,26 @@ class ModelTrainer:
         calculate_probabilities=True,
         verbose=True)
     
-    # def train_custom_BERTopic(self, airline_name):
-    #     try:
-            
-    #         social_united_list = df_social_UNITED['text_clean'].tolist()
-    #         topics, probs = social_united_model.fit_transform(social_united_list)            
+    def train_custom_BERTopic(self, bert_model, text_list):
+        try:
+
+            topics, probs = bert_model.fit_transform(text_list)
+
+            return bert_model, topics, probs           
         
-    #     except Exception as e:
-    #         raise CustomException(sys, e)
+        except Exception as e:
+            raise CustomException(sys, e)
 
 if __name__ == "__main__":
 
     data_transformation = DataTransformation()
     df = data_transformation.read_data("social")
     df = data_transformation.clean_transform(df, "social")
-    data_transformation.select_airline(df, "united airlines")
+    text_to_model = data_transformation.select_airline(df, "united airlines")
+
+    model_trainer = ModelTrainer()
+    model, topics, prob = model_trainer.train_custom_BERTopic(model_trainer.generic_model, text_to_model)
+    
+    freq = model.get_topic_info()
+    print(freq.head())
+    

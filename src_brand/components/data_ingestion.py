@@ -20,9 +20,6 @@ class DataIngestionConfig:
 class DataIngestion:
     def __init__(self):
         self.ingestion_config=DataIngestionConfig()
-        # session = boto3.Session( aws_access_key_id='AKIARB5CFGGOCDATTVVR', 
-        #                          aws_secret_access_key='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') 
-        # s3 = session.resource('s3')
         self.s3 = s3 = boto3.resource('s3')
      
     def download_files(self):

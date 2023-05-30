@@ -128,11 +128,16 @@ Free Seats(Topic_9) Keywords:
 The repo needs a few more touches to be finished with the inference pipeline. 
 It has been built with OOP fashion with the below main structure.
 ```
+brand_artifacts/
+└── data
+    ├── blog
+    ├── news
+    └── social
 ├── notebooks
 │   └── 1_Analysis.ipynb
 ├── requirements.txt
 ├── setup.py
-└── src
+└── src_brand
     ├── __init__.py
     ├── components
     │   ├── __init__.py
@@ -144,7 +149,7 @@ It has been built with OOP fashion with the below main structure.
     ├── pipeline
     │   ├── __init__.py
     │   └── inference.py
-    └── utilities.py
+    └── utils.py
  ```   
 Once it's done, it will allow to run a real-time inference pipeline through pip install.
 

@@ -63,14 +63,14 @@ class DataTransformation:
             df = df[df['text_clean'].str.contains(airline_name)]
             text_list = df['text_clean'].tolist()   
 
-            return text_list[0]
+            return text_list
         
         except Exception as e:
             raise CustomException(sys, e)
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
 
-    data_transformation = DataTransformation()
-    df = data_transformation.read_data("social")
-    df = data_transformation.clean_transform(df, "social")
-    print(data_transformation.select_airline(df, "united airlines"))
+#     data_transformation = DataTransformation()
+#     df = data_transformation.read_data("social")
+#     df = data_transformation.clean_transform(df, "social")
+#     print(data_transformation.select_airline(df, "united airlines"))
