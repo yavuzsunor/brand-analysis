@@ -44,7 +44,7 @@ class DataIngestion:
 
                     self.s3.meta.client.download_file('peakmetrics-challenges', my_bucket_object.key, path+file_name)
         except Exception as e:
-            raise CustomException(sys, e)
+            raise CustomException(e, sys)
 
 if __name__ == "__main__":
     obj = DataIngestion()

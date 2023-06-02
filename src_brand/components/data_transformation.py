@@ -37,7 +37,7 @@ class DataTransformation:
             return df
 
         except Exception as e:
-            raise CustomException(sys, e) 
+            raise CustomException(e, sys) 
 
 
     def clean_transform(self, df, media_type):
@@ -54,7 +54,7 @@ class DataTransformation:
             return df 
 
         except Exception as e:
-            raise CustomException(sys, e) 
+            raise CustomException(e, sys) 
 
 
     def select_airline(self, df, airline_name):
@@ -66,4 +66,4 @@ class DataTransformation:
             return text_list
         
         except Exception as e:
-            raise CustomException(sys, e)
+            raise CustomException(e, sys)
